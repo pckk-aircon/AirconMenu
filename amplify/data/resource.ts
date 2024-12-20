@@ -12,6 +12,14 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
+
+    //外部のDynamoDBに接続
+    
+    IotData: a.customType({
+      Device : a.string().required(),
+      DeviceDatetime: a.string().required(),
+    }),
+
 });
 
 export type Schema = ClientSchema<typeof schema>;
