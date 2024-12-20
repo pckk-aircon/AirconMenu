@@ -37,7 +37,7 @@ export default function App() {
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.Division}>{todo.DivisionName}</li>
+          <li key={todo.id}>{todo.content}</li>
         ))}
       </ul>
       <div>
