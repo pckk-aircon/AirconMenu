@@ -13,10 +13,10 @@ Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
 export default function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+  const [todos, setTodos] = useState<Array<Schema["ExternalPostTableDataSource"]["type"]>>([]);
 
   function listTodos() {
-    client.models.Todo.observeQuery().subscribe({
+    client.models.ExternalPostTableDataSource.observeQuery().subscribe({
       next: (data) => setTodos([...data.items]),
     });
   }
@@ -31,7 +31,7 @@ export default function App() {
   
     //const todolabel = window.prompt("ラベルを入力してください。");
     //const todovalue = window.prompt("値を入力してください。");
-    client.models.Todo.create({
+    client.models.ExternalPostTableDataSource.create({
       //content: window.prompt("入力してください。"),
       Division: todoDivision,
       //label: todolabel,
@@ -44,10 +44,10 @@ export default function App() {
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
-        {todos.map((todo) => (
+        {todos.map((ExternalPostTableDataSource) => (
 
           //<li key={todo.id}>{todo.content}</li>
-          <li key={todo.Division}>{todo.DivisionName}</li>
+          <li key={ExternalPostTableDataSource.Division}>{ExternalPostTableDataSource.DivisionName}</li>
         ))}
       </ul>
       <div>
