@@ -15,12 +15,6 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
-    //外部のDynamoDB（Division）に接続。
-    Division: a.customType({
-      Division : a.string().required(),
-      DivisionName: a.string(),
-    }),
-
 });
 
 export type Schema = ClientSchema<typeof schema>;
