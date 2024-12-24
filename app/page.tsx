@@ -28,7 +28,6 @@ export default function App() {
   function createTodo() {
     //追加。デフォルト値を0に指定。
     const todoDivision = window.prompt("内容を入力してください。") || "0";
-  
     //const todolabel = window.prompt("ラベルを入力してください。");
     //const todovalue = window.prompt("値を入力してください。");
     client.models.ExternalPostTableDataSource.create({
