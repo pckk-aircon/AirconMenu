@@ -1,12 +1,14 @@
-import { defineBackend } from '@aws-amplify/backend';
-import { auth } from './auth/resource.js';
-import { data } from './data/resource.js';
+import { defineBackend } from "@aws-amplify/backend";
+import { auth } from "./auth/resource";
+import { data } from "./data/resource";
+//下記を追加。
+import { aws_dynamodb } from "aws-cdk-lib";
 
-defineBackend({
+//export const backendの形式に変更する。
+export const backend = defineBackend({
   auth,
   data,
 });
-
 
 const externalDataSourcesStack = backend.createStack("MyExternalDataSources");
 
