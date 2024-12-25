@@ -13,6 +13,12 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
+  DivisionTable: a.customType({
+    Division: a.id().required(),
+    DivisionName: a.string(),
+    Controller: a.string(),
+  }),
+
 });
 
 export type Schema = ClientSchema<typeof schema>;
