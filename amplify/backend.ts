@@ -11,13 +11,11 @@ export const backend = defineBackend({
 
 const externalDataSourcesStack = backend.createStack("MyExternalDataSources");
 
-
 const externalTable = aws_dynamodb.Table.fromTableName(
   externalDataSourcesStack,
   "MyExternalDivisionTable",
   "DivisionTable"
 );
-
 
 backend.data.addDynamoDbDataSource(
   "ExternalDivisionTableDataSource",
