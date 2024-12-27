@@ -9,14 +9,14 @@ specifies that any user authenticated via an API key can "create", "read",
 const schema = a.schema({
   Todo: a
     .model({
-      content: a.string(),    
+      Division: a.id().required(),
+      DivisionName: a.string(),  
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
   DivisionTable: a.customType({
     Division: a.id().required(),
     DivisionName: a.string(),
-    Controller: a.string(),
   }),
 
 });
